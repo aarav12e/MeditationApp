@@ -91,4 +91,23 @@
     width: 100%;
     z-index: -10;
   }
-  
+  .time-select input {
+  width: 30%;
+  height: 8%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+#setCustomTime {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+#setCustomTime:hover {
+  background: white;
+  color: black;
+}

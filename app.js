@@ -1,4 +1,6 @@
 const app = () => {
+    const customTimeInput = document.getElementById('customTime');
+    const setCustomTimeBtn = document.getElementById('setCustomTime');
     const song = document.querySelector('.song');
     const play = document.querySelector('.play');
     const outline = document.querySelector('.moving-outline circle');
@@ -54,6 +56,20 @@ const app = () => {
             play.src = "./svg/play.svg";
         }
     };
+    setCustomTimeBtn.addEventListener('click', () => {
+    const minutes = parseInt(customTimeInput.value);
+
+    if (isNaN(minutes) || minutes <= 0) {
+        alert("Please enter a valid number of minutes");
+        return;
+    }
+
+    fakeDuration = minutes * 60;
+    timeDisplay.textContent = `${minutes}:00`;
+    song.currentTime = 0;
+    outline.style.strokeDashoffset = outlineLength;
+});
+
 
     // We can animate the circle
     // Will keep updating till the song is playing
